@@ -1,6 +1,7 @@
 import { DataService } from './data.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SongModel } from './model';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent implements OnInit {
   videos: any = null;
   listaVideos: string[] = [];
   formSearch: FormGroup;
+  songModel: SongModel;
 
   constructor(private dataService: DataService) {
 

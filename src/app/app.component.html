@@ -1,36 +1,31 @@
-<!-- <div class="row">
-  <form [formGroup]="formSearch" (ngSubmit)="loadTracks()">
-    <h2>Playlist Generator: </h2>
-    <label>
-      Artist:
-      <input type="text" formControlName="artist">
-    </label>
-    <label>
-      Track:
-      <input type="text" formControlName="track">
-    </label>
-    <input class="btn-primary" type="submit" value="Search">
+<div class="container">
+  <h2>Playlist Generate</h2>
+  <p>Crie uma playlist com base em uma música. Tente de graça..</p>
+  <form [formGroup]="formSearch" class="form-inline" action="">
+    <div class="form-group">
+      <!-- <label for="email">Song:</label> -->
+      <input type="text" class="form-control input-search" id="song" placeholder="Enter song" name="song">
+    </div>
+    <div class="form-group">
+      <!-- <label for="pwd">Artist:</label> -->
+      <input type="text" class="form-control input-search" id="artist" placeholder="Enter artist" name="artist">
+    </div>
+    <button type="submit" class="btn btn-primary button-search">Submit</button>
   </form>
-  <p>{{formSearch.value.artist}}</p>
-</div> -->
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="">
+        <span class="badge">14</span>
+        Cras justo odio
+      </li>
+    </ul>
+  </div>
+</div>
 
-<form [formGroup]="formSearch" (ngSubmit)="loadTracks()">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Artist:</label>
-    <input type="text" class="form-control" formControlName="artist" id="exampleInputEmail1" aria-describedby="emailHelp"
-    placeholder="Artist">
-    <small id="emailHelp" class="form-text text-muted">Coloque o nome do artista.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Track:</label>
-    <input type="text" class="form-control" formControlName="track" id="exampleInputPassword1" placeholder="Track">
-  </div>
-  <!-- <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
-  </div> -->
-  <input class="btn btn-primary" type="submit" value="Search">
-</form>
+<!-- <div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/5KhyDtDe6mI?start=166" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div> -->
 
 <!-- <p>{{ teste.similartracks.track[0].name | json }}</p> -->
 

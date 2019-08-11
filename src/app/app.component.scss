@@ -1,0 +1,31 @@
+h1, h2, h3, h4 {
+    font-family: sans-serif;
+    font-weight: 400;
+    margin: 20px 0;
+}
+header {
+    position: absolute;
+    padding: 5px 0;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    z-index: 30;
+}
+.body {
+    width: 100%;
+    max-height: 600px;
+    float: left;
+    position: relative;
+}
+.input-search {
+    height: 50px;
+    line-height: 30px;
+    font-size: 1.4em;
+    padding-left: 20px;
+}
+
+.button-search {
+    height: 50px;
+    line-height: 30px;
+    font-size: 1.4em;
+}
