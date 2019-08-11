@@ -1,7 +1,7 @@
 import { DataService } from './data.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SongModel } from './model';
+import { TrackModel } from './model';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   videos: any = null;
   listaVideos: string[] = [];
   formSearch: FormGroup;
-  songModel: SongModel;
+  trackModel: TrackModel[] = [];
 
   constructor(private dataService: DataService) {
 
@@ -51,10 +51,19 @@ export class AppComponent implements OnInit {
 
   loadVideos(listaTracks: any[]) {
     listaTracks.forEach(element => {
+      const track = new TrackModel();
       this.dataService.getVideoSimilar(element.artist.name, element.name).subscribe(data => {
+
+        console.log(data);
         this.videos = data;
         this.listaVideos.push(this.videos.items[0].id.videoId);
         console.log('https://www.youtube.com/watch?v=' + this.videos.items[0].id.videoId);
+
+        track.nameSong = element.artist.name;
+        track.nameArtist = element.name;
+        track.linkYoutube = 'https://www.youtube.com/watch?v=' + this.videos.items[0].id.videoId;
+
+        this.trackModel.push(track);
       }, error => {
         console.log(element.artist.name + element.name + 'Não encontrado');
       });

@@ -1,22 +1,20 @@
 <div class="container">
   <h2>Playlist Generate</h2>
   <p>Crie uma playlist com base em uma música. Tente de graça..</p>
-  <form [formGroup]="formSearch" class="form-inline" action="">
+  <form [formGroup]="formSearch" (ngSubmit)="loadTracks()" class="form-inline" action="">
     <div class="form-group">
-      <!-- <label for="email">Song:</label> -->
-      <input type="text" class="form-control input-search" id="song" placeholder="Enter song" name="song">
+      <input type="text" class="form-control input-search" formControlName="track" placeholder="Enter song" name="track">
     </div>
     <div class="form-group">
-      <!-- <label for="pwd">Artist:</label> -->
-      <input type="text" class="form-control input-search" id="artist" placeholder="Enter artist" name="artist">
+      <input type="text" class="form-control input-search" formControlName="artist" placeholder="Enter artist" name="artist">
     </div>
     <button type="submit" class="btn btn-primary button-search">Submit</button>
   </form>
   <div>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="">
-        <span class="badge">14</span>
-        Cras justo odio
+      <li class="list-group-item" *ngFor="let track of trackModel">
+        <a class="btn btn-danger" href={{track.linkYoutube}} target="_blank"></a>
+        {{ track.nameSong }} - {{ track.nameArtist }}
       </li>
     </ul>
   </div>
