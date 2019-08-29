@@ -10,14 +10,13 @@ export class DataService {
   youtubeApiUrl = 'https://www.googleapis.com/youtube/v3/search?';
   lastFMKey = '4d06040d4f114a674bd16ca4a5862149';
   youtubeKey = 'AIzaSyB2xzvgi4jLMlp8Mj8yzNJ40MV3T72RQHE';
-  amount = 5;
 
   constructor(private http: HttpClient) { }
 
-  getTrackSimilar(artist: string, track: string) {
+  getTrackSimilar(artist: string, track: string, amount: number) {
     return this.http.get(
       // tslint:disable-next-line:max-line-length
-      this.lastFmApiiUrl + `method=track.getSimilar&api_key=${this.lastFMKey}&artist=${artist}&track=${track}&limit=${this.amount}&format=json`);
+      this.lastFmApiiUrl + `method=track.getSimilar&api_key=${this.lastFMKey}&artist=${artist}&track=${track}&limit=${amount}&format=json`);
   }
 
   getVideoSimilar(artist: string, track: string) {

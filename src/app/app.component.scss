@@ -22,10 +22,17 @@ header {
     line-height: 30px;
     font-size: 1.4em;
     padding-left: 20px;
+    margin-right: 5px;
 }
-
 .button-search {
     height: 50px;
     line-height: 30px;
     font-size: 1.4em;
+}
+.track-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+a {
+    float: right;
 }

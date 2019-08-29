@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   listaVideos: string[] = [];
   formSearch: FormGroup;
   trackModel: TrackModel[] = [];
+  qtdTracks = [5, 10, 20, 50];
+  qtdDefault = 5;
 
   constructor(private dataService: DataService) {
 
@@ -31,11 +33,18 @@ export class AppComponent implements OnInit {
         'equalize',
         Validators.required,
       ),
+      qtdTracks: new FormControl(
+
+      )
     });
+    this.formSearch.controls['qtdTracks'].setValue(this.qtdDefault, {onlySelf: true});
   }
 
   loadTracks() {
-    return this.dataService.getTrackSimilar(this.formSearch.value.artist, this.formSearch.value.track).subscribe(data => {
+    this.trackModel = [];
+    return this.dataService.getTrackSimilar(this.formSearch.value.artist,
+                                            this.formSearch.value.track,
+                                            this.formSearch.value.qtdTracks).subscribe(data => {
 
       console.log(data);
       if (data !== undefined) {
