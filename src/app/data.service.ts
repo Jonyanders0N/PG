@@ -8,8 +8,8 @@ export class DataService {
 
   lastFmApiiUrl = 'http://ws.audioscrobbler.com/2.0/?';
   youtubeApiUrl = 'https://www.googleapis.com/youtube/v3/search?';
-  lastFMKey = '4d06040d4f114a674bd16ca4a5862149';
-  youtubeKey = 'AIzaSyB2xzvgi4jLMlp8Mj8yzNJ40MV3T72RQHE';
+  lastFMKey = 'lastfm_key';
+  youtubeKey = 'youtube_key';
 
   constructor(private http: HttpClient) { }
 
